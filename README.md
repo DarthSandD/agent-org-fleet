@@ -1,5 +1,9 @@
 # Agent Org Fleet
 
+<p align="center">
+  <img src="docs/assets/social-preview.png" alt="Agent Org Fleet">
+</p>
+
 A titled worker-role fleet for Muse operators who spawn subagents.
 
 ## What this is
@@ -85,6 +89,15 @@ stays coordinator and final reviewer. See `USAGE.md` for the spawn pattern.
    `~/workspace/custom-skills/org-builder/` so the skill file lands at
    `~/workspace/custom-skills/org-builder/SKILL.md`. Then "build an agent org"
    becomes a guided workflow in your own setup.
+
+## Org Structure
+
+![Agent Org Fleet org chart](docs/assets/org-chart.png)
+
+The fleet runs on an eight-rung NVIDIA-style ladder, from the CTO-Chief
+Architect down to Associate roles, across ten departments. Every role reports
+to a named role, and the full org tree plus a task-to-role lookup table lives
+in `roles/ORG_INDEX.md`.
 
 ## How Darren Labs built it
 
