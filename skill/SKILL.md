@@ -57,7 +57,7 @@ Higher rungs decide more alone and review more of others. Lower rungs execute mo
 
 **Step 3. Write the 10-section template.** Copy the skeleton from the template section below into your working notes. Fill one example role completely and read it aloud: if a new coordinator could not tell what this agent does and reports, the template needs tightening, not the role.
 
-**Step 4. Write role files in parallel batches.** One file per role at `roles/<slug>/SOUL.md`, where slug is the lowercase hyphenated title (for example `roles/staff-backend-engineer/SOUL.md`). Split the role list into independent batches and write batches at the same time. Keep each file 150 to 350 words. After each batch, spot check two files against the template before starting the next batch.
+**Step 4. Write role files in parallel batches.** One file per role directly under `roles/` (this fleet uses flat, title-cased files, for example `roles/Staff_Backend_Engineer.md`). Split the role list into independent batches and write batches at the same time. Keep each file 150 to 350 words. After each batch, spot check two files against the template before starting the next batch.
 
 **Step 5. Build the org index with task-to-role lookup.** Write `roles/ORG_INDEX.md` containing: the ladder with one-line rung definitions, every department with its roles and file paths, the reporting tree, and a task-to-role lookup table (task type on the left, the role title that owns it on the right). The lookup is the file's main job; a coordinator under time pressure reads that table first.
 
@@ -126,7 +126,7 @@ Every report uses these four headings, in this order:
 
 Run these as commands after writing or changing role files. All must pass.
 
-- File count: the number of `roles/*/SOUL.md` files equals the number of roles listed in ORG_INDEX.md. No orphan files, no missing files.
+- File count: the number of role files under `roles/` (one file per role; this fleet names them `roles/<Role_Title>.md`) equals the number of roles listed in ORG_INDEX.md. No orphan files, no missing files.
 - Reports-to in every file: every SOUL.md has a non-empty section 3, and the named title exists as a role file, except C-suite roles which must say they report to the coordinator.
 - Skill paths exist on disk: every path listed in every section 7 resolves to a real file. A listed skill that does not exist is a failure, not a suggestion.
 - Word counts in band: every SOUL.md is 150 to 350 words. Shorter means the role is underspecified; longer means it is doing another role's job.

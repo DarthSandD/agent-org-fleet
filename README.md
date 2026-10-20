@@ -57,6 +57,35 @@ a role by task, and spawns a short-lived worker with that role file attached.
 The worker does one scoped job, reports back, and shuts down. The operator
 stays coordinator and final reviewer. See `USAGE.md` for the spawn pattern.
 
+## Features
+
+- 115 titled roles, no generic names, across 10 departments
+- NVIDIA-style ladder with eight rungs, from C-suite agent to Associate
+- Every role file follows the same 10-section template: title, department and
+  level, reports-to line, mission, authority, senior-dev gate, matched skills
+  as exact file paths, verification duties, report format, house rules
+- `ORG_INDEX.md` holds the org tree and a task-to-role lookup table, so
+  staffing a job is a lookup, not a debate
+- The org-builder skill in `skill/` walks you through building your own fleet
+- The two extra skills in `skills/` (`embedded-engineering`,
+  `ml-data-engineering`) cover the skill paths named by the embedded, firmware,
+  ML, and data roles
+
+## Quick start
+
+1. **Pick a role.** Open `roles/ORG_INDEX.md`, use the task-to-role lookup
+   table, and choose one role for the job.
+2. **Spawn with two documents.** Attach your base SOUL.md (shared rules for
+   every worker) and the one role file to the worker's spawn message, then
+   scope the task: outcome, constraints, deliverable, acceptance.
+3. **Require the report.** Workers report in RESULT / VERIFIED / RISKS /
+   REMAINING. See `USAGE.md` for the full spawn pattern and an example
+   message.
+4. **Install the org-builder skill (optional).** Copy the `skill/` folder to
+   `~/workspace/custom-skills/org-builder/` so the skill file lands at
+   `~/workspace/custom-skills/org-builder/SKILL.md`. Then "build an agent org"
+   becomes a guided workflow in your own setup.
+
 ## How Darren Labs built it
 
 This fleet came out of real work at Darren Labs, where one operator runs
@@ -87,8 +116,9 @@ lines. Roughly how it happened:
    grepped for a reports-to line. Every matched skill path checked to exist on
    disk. Whole tree grepped for the em-dash character, count must be zero.
 8. **Retire the old version.** The earlier generic roles (SENIOR_A, SENIOR_B,
-   and friends) moved to a retired folder with a note saying do not spawn from
-   them. History kept, confusion gone.
+   and friends) were retired out of the live folder. Keep any replaced role
+   file under `roles/_retired/` with a date stamp and a note saying do not
+   spawn from them. History kept, confusion gone.
 
 ## Build your own org
 
@@ -143,3 +173,11 @@ feel the gap: usually when a worker keeps escalating the same kind of call.
 ## License
 
 MIT. See `LICENSE`. Copyright 2026 Darren Labs / Tri Adi S. (work name Darren Lieu).
+
+## Credits
+
+Built by Darren Labs: the fleet came out of daily operator work with ephemeral
+workers, and the org-builder skill packages that process so you can build your
+own. The two extra skills in `skills/` (`embedded-engineering`,
+`ml-data-engineering`) are included so the skill paths named by the embedded,
+firmware, ML, and data role files resolve to real files.

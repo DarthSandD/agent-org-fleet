@@ -87,5 +87,7 @@ Every future build auto-staffs from this org without waiting for a staffing requ
 ## Notes
 
 - RESEARCH_NOTES.md holds the fleet design research (patterns only, nothing copied).
-- Old generic roles live in _retired/ as history. Do not spawn from them.
+- Old generic roles were retired out of the live folder. If you retire or
+  replace a role, move the old file to `roles/_retired/` with a date stamp and
+  a note saying do not spawn from them.
 - Word counts per role file: 150-350 words, tight by design. Matched skill paths inside each file were verified to exist on disk at build time.
